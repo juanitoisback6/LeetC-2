@@ -1,7 +1,18 @@
-let l1 = [9,9,9,9,9,9,9]; 
-let l2 = [9,9,9,9];
- 
-function addTwoNumbers (l1, l2) {
+function addTwoNumbers (li1, li2) {
+   
+  
+  let l1 = [];
+  let l2 = [];
+  
+  while(li1 != null){
+    l1.push(li1.val)
+    li1= li1.next
+  }
+    while(li2 != null){
+    l2.push(li2.val)
+    li2= li2.next
+  }
+
   
   let sumSav= 0;
   let output=[];
@@ -52,9 +63,22 @@ function addTwoNumbers (l1, l2) {
    if(sumSav>0){
     output.push(sumSav);
   }
-    
-   return output 
-};
+  
+function ListNode(val, next) {
 
-console.log(addTwoNumbers (l1, l2))
- 
+this.val = (val===undefined ? 0 : val);
+this.next = (next===undefined ? null : next); 
+
+} 
+  
+  let dummyNode = new ListNode(0);
+  let nodoAc= dummyNode;
+  
+  for(let i=0; i < output.length;i++){
+    
+    nodoAc.next = new ListNode(output[i]);
+    nodoAc= nodoAc.next;
+  }
+    
+   return dummyNode.next 
+};
