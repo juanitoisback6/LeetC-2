@@ -32,9 +32,7 @@ function addTwoNumbers (li1, li2) {
   }
   
   // once we have sorted the long and short array, we reverse them
-  l1.reverse();
-   l2.reverse();
-  
+
   
   //loop to iterate l1 array
   for(let i=0; i<l1.length; i++){
